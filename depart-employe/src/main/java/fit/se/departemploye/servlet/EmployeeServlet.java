@@ -40,6 +40,7 @@ public class EmployeeServlet extends HttpServlet {
                 case "edit": // show edit form
                     int id = Integer.parseInt(req.getParameter("id"));
                     Employee emp = dao.getEmpById(id);   // cần thêm trong QuanLiDAO
+
                     req.setAttribute("employee", emp);
                     req.getRequestDispatcher("emp-form.jsp").forward(req, resp);
                     break;
